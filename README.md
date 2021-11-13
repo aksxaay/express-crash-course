@@ -46,3 +46,84 @@ downloading different files
 
 what happens if we have a lot of routes...?
 
+
+### Implementing Routers
+create folder
+/routes where it contains everything
+index for all different routes
+
+you have to set up a mini application
+
+`module.exports = router`
+- export from /routes/users.js
+- import to server.js
+
+
+router post request
+dynamic parameter
+id
+
+
+don't have /new below the /:id
+because it might have new as the ID
+
+chain together all the requests for a single route.
+
+### Advanced Routing
+![router.param // middleware](middleware.png)
+
+it is infinitely loading if we don't use the next function..
+so if there's any middle processes that have to be executed between the get request and the sent response, middleware is the way to go.
+
+
+Might also try and store the request variable.
+
+
+Well came across converting circular structure to JSON
+[circular structure conversion error](https://stackoverflow.com/questions/4816099/chrome-sendrequest-error-typeerror-converting-circular-structure-to-json)
+
+### Middleware
+but okay guess I cannot send back the request back to the browser...
+
+you only ever see `next()` when using middleware
+
+define middleware at the top of the page
+
+when I rename any html file to `index.html` it overtakes the '/' route
+
+you can also have logger function in the middle right before the (req, res)
+
+
+### Rendering Static HTML Files
+serve a basic html files...
+```
+http://localhost:3000/test/tt.html
+
+you can access them directly
+static webpages, like from web1
+
+http://localhost:3000/index2.html
+```
+
+### Form Parse
+http://localhost:3000/users/new
+
+![](cant-access.png)
+
+by default express.js doesn't allow you to access the body.
+
+Instead you use middleware to do that...
+
+check if the name is valid...
+and then re-render the form if not valid.
+
+but if valid, redirect to new user route.
+
+### send json information
+json request
+fetch from client to server...
+
+
+### query parameteres
+
+get name from query string.
